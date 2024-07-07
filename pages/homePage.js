@@ -10,34 +10,37 @@ exports.homePage = class homePage {
 
     async solutionsButton() {
         const solutionsOverview = this.page.getByRole('link', { name: 'Explore our solutions' });
-        await this.solutionsOverview.click();
+        await solutionsOverview.click();
     }
 
     async dataReadinessButton() {
         const dataReadiness = this.page.getByRole('link', { name: 'Take our data readiness' });
-        await this.dataReadiness.click();
+        await dataReadiness.click();
     }
 
     async genaiWidget() {
-        const genaiWidget = this.page.locator('div').filter({ hasText: /^Discover ourEnterprise GenAI Solutions$/ }).first().click();
-        await this.genaiWidget.click();
+        const genaiWidget = this.page.locator('div').filter({ hasText: /^Discover ourEnterprise GenAI Solutions$/ }).first();
+        await genaiWidget.click();
     }
 
-    async industries() {
-        const industries = [
-            { name: 'Telecommunications' },
-            { name: 'Financial Services' },
-            { name: 'Social Impact' },
-            { name: 'Real Estate' },
-            { name: 'Others' },
-        ]
+    async telcom(){
+        await this.page.getByText('Telecommunications').click();
+        await this.popup('Read case study', true)
+    }
 
-        for (let industry of industries) {
-            await this.page.getByText(industry.name).click();
-            const pagePromise = this.page.waitForEvent('popup');
-            await this.page.getByRole('link', { name: 'Read case study' }).click();
-            await pagePromise;
-        }
+    async finService(){
+        await this.page.getByText('Financial Services').click();
+        await this.popup('Read case study', true)
+    }
+
+    async socialImpact(){
+        await this.page.getByText('Social Impact').click();
+        await this.popup('Read case study', true)
+    }
+
+    async realEstate(){
+        await this.page.getByText('Real Estate').click();
+        await this.popup('Read case study', true)
     }
 
     async otherIndustries() {
@@ -46,9 +49,25 @@ exports.homePage = class homePage {
         await this.popup('Contact Us', true)
     }
 
-    async popup(attribute, ifExact = false) {
+    // async industries() {
+    //     const industries = [
+    //         { name: 'Telecommunications' },
+    //         { name: 'Financial Services' },
+    //         { name: 'Social Impact' },
+    //         { name: 'Real Estate' },
+    //     ]
+
+    //     for (let industry of industries) {
+    //         await this.page.getByText(industry.name).click();
+    //         const pagePromise = this.page.waitForEvent('popup');
+    //         await this.page.getByRole('link', { name: 'Read case study' }).click();
+    //         await pagePromise;
+    //     }
+    // }
+
+    async popup(attribute, isExact = false) {
         const pagePromise = this.page.waitForEvent('popup');
-        await this.page.getByRole('link', { name: attribute, exact: ifExact }).click();
+        await this.page.getByRole('link', { name: attribute, exact: isExact }).click();
         await pagePromise;
     }
 
@@ -68,6 +87,11 @@ exports.homePage = class homePage {
         await this.popup('Customer Intelligence Combine')
     }
 
-    async
+    async contactLink(){
+        await this.popup('Contact Us.')
+    }
 
+    async contactButton(){
+        await this.popup('Get in touch')
+    }
 }
