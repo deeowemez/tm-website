@@ -1,21 +1,25 @@
-exports.companyInfoPage = class companyInfoPage{
+exports.companyInfo = class companyInfo{
 
     constructor(page){
         this.page = page;
     }
 
-    async clickDiscoverSolutions(){
+    async gotoCompanyInfoPage(){
+        await this.page.goto('https://thinkingmachin.es/about')
+    }
+
+    async clickDiscoverSolutionsButton(){
         const clickDiscoverSolutions = this.page.getByRole('link', { name: 'Discover our solutions' });
         await clickDiscoverSolutions.click();
     }
 
-    async clickReadCaseStudies(){
+    async clickReadCaseStudiesButton(){
         const clickReadCaseStudies = this.page.getByRole('link', { name: 'Read our case studies' });
         await clickReadCaseStudies.click();
         }
     
 
-    async clickBecomePartner(){
+    async clickBecomePartnerButton(){
         const clickBecomePartner = this.page.getByRole('link', { name: 'Become our partner' });
         await clickBecomePartner.click();
     }

@@ -8,62 +8,46 @@ exports.homePage = class homePage {
         await this.page.goto('https://thinkingmachin.es/')
     }
 
-    async solutionsButton() {
+    async clickExploreSolutionsButton() {
         const solutionsOverview = this.page.getByRole('link', { name: 'Explore our solutions' });
         await solutionsOverview.click();
     }
 
-    async dataReadinessButton() {
+    async clickTakeDataReadinessButton() {
         const dataReadiness = this.page.getByRole('link', { name: 'Take our data readiness' });
         await dataReadiness.click();
     }
 
-    async genaiWidget() {
+    async clickGenaiWidget() {
         const genaiWidget = this.page.locator('div').filter({ hasText: /^Discover ourEnterprise GenAI Solutions$/ }).first();
         await genaiWidget.click();
     }
 
-    async telcom(){
+    async clickTelcom(){
         await this.page.getByText('Telecommunications').click();
         await this.popup('Read case study', true)
     }
 
-    async finService(){
+    async clickFinService(){
         await this.page.getByText('Financial Services').click();
         await this.popup('Read case study', true)
     }
 
-    async socialImpact(){
+    async clickSocialImpact(){
         await this.page.getByText('Social Impact').click();
         await this.popup('Read case study', true)
     }
 
-    async realEstate(){
+    async clickRealEstate(){
         await this.page.getByText('Real Estate').click();
         await this.popup('Read case study', true)
     }
 
-    async otherIndustries() {
+    async clickOtherIndustries() {
         await this.page.getByText('Telecommunications').click();
         await this.page.getByText('Others').click();
         await this.popup('Contact Us', true)
     }
-
-    // async industries() {
-    //     const industries = [
-    //         { name: 'Telecommunications' },
-    //         { name: 'Financial Services' },
-    //         { name: 'Social Impact' },
-    //         { name: 'Real Estate' },
-    //     ]
-
-    //     for (let industry of industries) {
-    //         await this.page.getByText(industry.name).click();
-    //         const pagePromise = this.page.waitForEvent('popup');
-    //         await this.page.getByRole('link', { name: 'Read case study' }).click();
-    //         await pagePromise;
-    //     }
-    // }
 
     async popup(attribute, isExact = false) {
         const pagePromise = this.page.waitForEvent('popup');
@@ -71,27 +55,27 @@ exports.homePage = class homePage {
         await pagePromise;
     }
 
-    async dataPlatforms() {
+    async clickDataPlat() {
         await this.popup('Data Platforms Build secure,')
     }
 
-    async documentIntelligence() {
+    async clickDocumentInt() {
         await this.popup('Document Intelligence Integrate, search, and gain insights from documents that')
     }
 
-    async locationIntelligence() {
+    async clickLocationInt() {
         await this.popup('Location Intelligence Make')
     }
 
-    async customerIntelligence() {
+    async clickCustomerInt() {
         await this.popup('Customer Intelligence Combine')
     }
 
-    async contactLink(){
+    async clickContactLink(){
         await this.popup('Contact Us.')
     }
 
-    async contactButton(){
+    async clickContactButton(){
         await this.popup('Get in touch')
     }
 }

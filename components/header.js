@@ -10,72 +10,72 @@ exports.siteHeader = class siteHeader {
     }
 
     // Solutions Directory
-    async solutionsDir() {
+    async clickSolutionsDir() {
         const solutionsDir = this.page.locator('a').filter({ hasText: 'Solutions' }).nth(3)
         await solutionsDir.click();
     }
 
-    async dataPlat() {
+    async clickDataPlat() {
         const dataPlat = this.page.getByRole('link', { name: 'Data Platforms' }).nth(2);
         await dataPlat.click();
     }
 
-    async documentInt() {
+    async clickDocumentInt() {
         const documentInt = this.page.getByRole('link', { name: 'Document Intelligence' }).nth(2);
         await documentInt.click();
     }
 
-    async locationInt() {
+    async clickLocationInt() {
         const locationInt = this.page.getByRole('link', { name: 'Location Intelligence' }).nth(2);
         await locationInt.click();
     }
 
-    async customerInt() {
+    async clickCustomerInt() {
         const customerInt = this.page.getByRole('link', { name: 'Customer Intelligence' }).nth(2);
         await customerInt.click();
     }
 
-    async solutionsOver() {
+    async clickSolutionsOverview() {
         const solutionsOver = this.page.getByRole('link', { name: 'See Overview' });
         await solutionsOver.click();
     }
 
     // Enterprise GenAI
-    async genaiSolutions() {
+    async clickGenaiSolutions() {
         const genaiSol = this.page.getByRole('link', { name: 'See Overview' });
         await genaiSol.click();
     }
 
     // Stories
-    async stories() {
+    async clickStories() {
         const stories = this.page.locator('a').filter({ hasText: 'Stories' }).nth(2);
         await stories.click();
     }
 
     // Careers
-    async careers() {
+    async clickCareers() {
         const careers = this.page.getByRole('link', { name: 'Careers' }).nth(1);
         await careers.click();
     }
 
     // Company Directory
-    async companyDir() {
+    async clickCompanyDir() {
         const companyDir = this.page.locator('a').filter({ hasText: 'Company' }).nth(1);
         await companyDir.click();
     }
 
-    async about(){
+    async clickAbout(){
         const about = this.page.getByRole('link', { name: 'About' }).nth(1);
         await about.click();
     }
 
-    async pressRoom(){
+    async clickPressRoom(){
         const pressRoom = this.page.getByRole('link', { name: 'Press Room' }).nth(1);
         await pressRoom.click();
     }
 
     // Contact Button
-    async contactButton(){
+    async clickContactButton(){
         const contactButton = this.page.getByRole('link', { name: 'Contact us' }).first();
         await contactButton.click();
     }

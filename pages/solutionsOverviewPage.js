@@ -1,5 +1,9 @@
 exports.solutionsOver = class solutionsOver{
 
+    async gotoSolutionsOverviewPage(){
+        await this.page.goto('https://thinkingmachin.es/solutions')
+    }
+
     async clickExploreSolution(){
         const clickExploreSolution = this.page.getByRole('link', { name: 'Explore Solution' });
         await clickExploreSolution.click();
@@ -12,54 +16,54 @@ exports.solutionsOver = class solutionsOver{
     }
 
     // Solutions Pages Buttons
-    async dataPlat(){
+    async clickDataPlat(){
         await this.page.locator('div').filter({ hasText: /^Data PlatformsDemocratize data access$/ }).nth(1).click;
         await this.clickExploreSolution();
     }
 
-    async documentInt(){
+    async clickDocumentInt(){
         await this.page.locator('div').filter({ hasText: /^Document IntelligenceExtract information easily$/ }).nth(1).click();
         await this.clickExploreSolution();
     }
 
-    async locationInt(){
+    async clickLocationInt(){
         await this.page.locator('div').filter({ hasText: /^Location IntelligenceUnlock spatial insights$/ }).nth(1).click();
         await this.clickExploreSolution();
     }
 
-    async customerInt(){
+    async clickCustomerInt(){
         await this.page.locator('div').filter({ hasText: /^Customer IntelligenceFast track customer insights$/ }).nth(1).click();
         await this.clickExploreSolution();
     }
 
     // Case Study Buttons
-    async dataPlatCaseStudy(){
+    async clickDataPlatCaseStudy(){
         await this.popup('faster processing Reports')
     }
 
-    async documentIntCaseStudyOne(){
+    async clickDocumentIntCaseStudyOne(){
         await this.popup('1M pages per second Extract')
     }
 
-    async documentIntCaseStudyTwo(){
+    async clickDocumentIntCaseStudyTwo(){
         await this.popup('1,000+ file types Capture')
     }
 
-    async locationIntCaseStudy(){
+    async clickLocationIntCaseStudy(){
         await this.popup('152M predictions Understand')
     }
 
-    async customerIntCaseStudy(){
+    async clickCustomerIntCaseStudy(){
         await this.popup('93% correct recall of')
     }
 
     // Contact Link/Button
-    async contactLink(){
+    async clickContactLink(){
         const contactLink = this.page.getByRole('link', { name: 'Contact us.' });
         await contactLink.click();
     }
 
-    async contactButton(){
+    async clickContactButton(){
         const contactLink = this.page.getByRole('link', { name: 'Get in touch' });
         await contactLink.click();
     }
