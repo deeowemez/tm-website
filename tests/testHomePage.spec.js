@@ -17,6 +17,20 @@ test('test', async({page}) =>{
 })
 
 
+test('header', async({page}) =>{
+    const header = new siteHeader(page)
+    const home = new homePage(page)
+    await home.gotoHomePage()
+    // await header.logo();
+    await header.solutionsDir();
+    // await header.dataPlat();
+    // await header.documentInt();
+    // await header.locationInt();
+    // await header.customerInt();
+    await header.solutionsOver();
+})
+
+
 test.only('header', async({page}) =>{
     const header = new siteHeader(page)
     const home = new homePage(page)
