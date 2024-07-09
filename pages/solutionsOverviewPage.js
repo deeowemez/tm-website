@@ -24,22 +24,26 @@ exports.solutionsOver = class solutionsOver {
 
     // Solutions Pages Buttons
     async clickDataPlat() {
-        await this.page.locator('div').filter({ hasText: /^Data PlatformsDemocratize data access$/ }).nth(1).click();
+        // await this.page.locator('div').filter({ hasText: /^Data PlatformsDemocratize data access$/ }).nth(1).click();
+        await this.page.locator('div').filter({ hasText: /^Data Platforms$/ }).click();
         await this.clickExploreSolution();
     }
 
     async clickDocumentInt() {
-        await this.page.locator('div').filter({ hasText: /^Document IntelligenceExtract information easily$/ }).nth(1).click();
+        // await this.page.locator('div').filter({ hasText: /^Document IntelligenceExtract information easily$/ }).nth(1).click();
+        await this.page.locator('div').filter({ hasText: /^Document Intelligence$/ }).click();
         await this.clickExploreSolution();
     }
 
     async clickLocationInt() {
-        await this.page.locator('div').filter({ hasText: /^Location IntelligenceUnlock spatial insights$/ }).nth(1).click();
+        // await this.page.locator('div').filter({ hasText: /^Location IntelligenceUnlock spatial insights$/ }).nth(1).click();
+        await this.page.locator('div').filter({ hasText: /^Location Intelligence$/ }).click();;
         await this.clickExploreSolution();
     }
 
     async clickCustomerInt() {
-        await this.page.locator('div').filter({ hasText: /^Customer IntelligenceFast track customer insights$/ }).nth(1).click();
+        // await this.page.locator('div').filter({ hasText: /^Customer IntelligenceFast track customer insights$/ }).nth(1).click();
+        await this.page.locator('div').filter({ hasText: /^Customer Intelligence$/ }).click();
         await this.clickExploreSolution();
     }
 

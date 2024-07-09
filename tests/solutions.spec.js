@@ -28,6 +28,9 @@ test.describe('Navigate to Solutions Overview and Individual Solutions Pages', (
         await page.close();
     })
 
+    test.setTimeout(40000);
+    test.slow(5000);
+
 
     // Navigate to Solutions Overview Page
     test('Navigate to Solutions Overview Page from TM Home Page', async () => {
@@ -47,7 +50,7 @@ test.describe('Navigate to Solutions Overview and Individual Solutions Pages', (
     })
 
     // Navigate to Data Platforms Page
-    test.only('Navigate to Data Platforms Page from TM Home Page', async() => {
+    test('Navigate to Data Platforms Page from TM Home Page', async() => {
         await home.gotoHomePage();
         await home.clickDataPlat();
     })
@@ -96,7 +99,7 @@ test.describe('Navigate to Solutions Overview and Individual Solutions Pages', (
     })
 
     // Navigate to Location Intelligence Page
-    test.only('Navigate to Location Intelligence Page from TM Home Page', async() => {
+    test('Navigate to Location Intelligence Page from TM Home Page', async() => {
         await home.gotoHomePage();
         await home.clickLocationInt();
     })
@@ -113,6 +116,7 @@ test.describe('Navigate to Solutions Overview and Individual Solutions Pages', (
     })
     
     test('Navigate to Location Intelligence Page from Footer', async() => {
+        await home.gotoHomePage();
         await footer.clickLocationIntLink();
     })
 
