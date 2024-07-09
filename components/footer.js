@@ -9,36 +9,34 @@ exports.siteFooter = class siteFooter {
         await logo.click();
     }
 
-    async popup(attribute, isExact = false) {
-        const pagePromise = this.page.waitForEvent('popup');
-        await this.page.getByRole('link', { name: attribute, exact: isExact }).click();
-        await pagePromise;
+    async clickElementByName(attribute, isExact = false) {
+        await this.page.getByRole('link', { name: attribute, exact: isExact}).click();
     }
 
     // Services Column
-    async clickDataPlat() {
-        await this.popup('Data Platforms', true);
+    async clickDataPlatLink() {
+        await this.clickElementByName('Data Platforms', true);
     }
 
-    async clickDocumentInt() {
-        await this.popup('Document Intelligence', true);
+    async clickDocumentIntLink() {
+        await this.clickElementByName('Document Intelligence', true);
     }
 
-    async clickLocationInt() {
-        await this.popup('Location Intelligence', true);
+    async clickLocationIntLink() {
+        await this.clickElementByName('Location Intelligence', true);
     }
 
-    async clickCustomerInt() {
-        await this.popup('Customer Intelligence', true);
+    async clickCustomerIntLink() {
+        await this.clickElementByName('Customer Intelligence', true);
     }
 
     // Company Column
     async clickAboutLink() {
-        await this.popup('About');
+        await this.clickElementByName('About');
     }
 
     async clickPressRoomLink() {
-        await this.popup('Press Room');
+        await this.clickElementByName('Press Room');
     }
 
     async clickCareersLink() {
@@ -53,41 +51,41 @@ exports.siteFooter = class siteFooter {
 
     // Resources Column
     async clickDataStoriesLink() {
-        await this.popup('Data Stories');
+        await this.clickElementByName('Data Stories');
     }
     
     async clickCaseStudiesLink(){
-        await this.popup('Case Studies');
+        await this.clickElementByName('Case Studies');
     }
     
     // Company Policies
     async clickCookiePolicyLink(){
-        await this.popup('Cookie Policy');
+        await this.clickElementByName('Cookie Policy');
     }
 
     async clickResponsibleDisclosureLink(){
-        await this.popup('Responsible Disclosure Policy');
+        await this.clickElementByName('Responsible Disclosure Policy');
     }
 
     async clickPrivacySecurityLink(){
-        await this.popup('Privacy & Security');
+        await this.clickElementByName('Privacy & Security');
     }
 
     // Social Media Platforms
     async clickLinkedinProfileLink(){
-        await this.popup('Linkedin');
+        await this.clickElementByName('Linkedin');
     }
     
     async clickTwitterProfileLink(){
-        await this.popup('Twitter');
+        await this.clickElementByName('Twitter');
     }
     
     async clickFacebookProfileLink(){
-        await this.popup('Facebook');
+        await this.clickElementByName('Facebook');
     }
     
     async clickInstagramProfileLink(){
-        await this.popup('Instagram');
+        await this.clickElementByName('Instagram');
     }
   
 }

@@ -4,6 +4,11 @@ exports.siteHeader = class siteHeader {
         this.page = page;
     }
 
+    async clickElementByName(attribute, isExact = false) {
+        await this.page.getByRole('link', { name: attribute, exact: isExact}).click();
+    }
+
+
     async logo() {
         const logo = this.page.locator('div').filter({ hasText: /^SolutionsIndustryEnterprise GenAINew!StoriesCareersCompanyContact us$/ }).getByRole('link').first();
         await logo.click();
@@ -36,14 +41,12 @@ exports.siteHeader = class siteHeader {
     }
 
     async clickSolutionsOverview() {
-        const solutionsOver = this.page.getByRole('link', { name: 'See Overview' });
-        await solutionsOver.click();
+        await this.clickElementByName('See Overview')
     }
 
     // Enterprise GenAI
     async clickGenaiSolutions() {
-        const genaiSol = this.page.getByRole('link', { name: 'See Overview' });
-        await genaiSol.click();
+        await this.clickElementByName('See Overview');
     }
 
     // Stories
